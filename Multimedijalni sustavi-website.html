@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="hr">
+    <head>
+        <title>Projekt Albatross</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" href="./Sadržaj/Logo/Albatross_logo1.svg" type="image/svg">
+        <style>
+            body{
+                margin:0;
+                padding-top:75px;
+                font-family:Arial, sans-serif;
+                background-image: url("./Sadržaj/Pozadina/Pozadina.png");
+                background-size:cover;
+                background-position:center;
+                background-repeat:no-repeat;
+                background-attachment:fixed;
+            }
+            body::before{
+                content:"";
+                position:fixed;
+                inset:0;
+                background: rgba(255,255,255,0.96);
+                z-index:-1;
+            }
+            .Logo{
+                width:60px;
+                height:60px;
+                border-radius:50%;
+                object-fit:cover;
+            }
+            .naslov{
+                color:rgb(22, 21, 21);
+                font-size:32px;
+                margin: 0;
+                white-space: nowrap;
+            }
+            .navbar {
+                background-color: #ffffff;
+            }
+            #mainnavbar {
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                z-index:9999;
+            }
+            .nav-item{
+                font-size:20px;
+                text-decoration-line:none;
+            }
+            .dropdown-menu{
+                transform: translatex(-20px);
+            }
+            .dropdown-toggle::after{
+                margin-left: 0.4rem;
+                vertical-align: middle;
+                transition:transform 0.2s ease;
+            }
+            .dropdown-toggle[aria-expanded="true"]::after{
+                transform:rotate(180deg);
+            }
+            .hero-wrap{
+                position: relative;
+            }
+            #vjezbeCarousel .carousel-item img{
+                width:100%;
+                height:750px;
+                object-fit:cover;
+            }
+            .naslov1{
+                color:rgb(22, 21, 21);
+                font-size:32px;
+                margin-bottom:25px;
+                white-space: nowrap;
+                text-align:center;
+            }
+            .Opis{
+                max-width:1000px;
+                margin:-250px auto 0;
+                position: relative;
+                z-index:5;
+                background-color:#ffffff;
+                padding:25px;
+                font-size:20px;
+                border-radius:25px;
+            }
+            .vjezbe{
+                max-width:1000px;
+                margin:auto;
+                margin-top:25px;
+                position: relative;
+                z-index:5;
+                background-color:#ffffff;
+                padding:25px;
+                font-size:20px;
+                border-radius:25px;
+            }
+            .btn{
+                background-color:#017db2;
+                margin-left:75px;
+                width:175px;
+            }
+            #fotografijeCarousel .carousel-item img{
+                width:1000px;
+                height:750px;
+                margin:auto;
+            }
+            #gimpCarousel .carousel-item img{
+                width:1000px;
+                height:750px;
+                margin:auto;
+            }
+            #audacityCarousel .carousel-item img{
+                width:1000px;
+                height:750px;
+                margin:auto;
+            }
+            #inkspaceCarousel .carousel-item img{
+                width:1000px;
+                height:750px;
+                margin:auto;
+            }
+            #blenderCarousel .carousel-item img{
+                width:1000px;
+                height:750px;
+                margin:auto;
+            }
+            #obsdavinciCarousel .carousel-item img{
+                width:1000px;
+                height:750px;
+                margin:auto;
+            }
+            #figmaCarousel .carousel-item img{
+                width:1000px;
+                height:725px;
+                margin:auto;
+            }
+            #githubnetlifyCarousel .carousel-item img{
+                width:1000px;
+                height:725px;
+                margin:auto;
+            }
+            .postupak{
+                max-width:1000px;
+                margin:auto;
+                margin-top:25px;
+                position: relative;
+                z-index:5;
+                background-color:#ffffff;
+                padding:25px;
+                font-size:20px;
+                border-radius:25px;
+            }
+            .sadrzaj{
+                max-width:1000px;
+                margin:auto;
+                margin-top:25px;
+                position: relative;
+                z-index:5;
+                background-color:#ffffff;
+                padding:25px;
+                font-size:20px;
+                border-radius:25px;   
+            }
+            .izvorielementi{
+                max-width:1000px;
+                margin:auto;
+                margin-top:25px;
+                position: relative;
+                z-index:5;
+                background-color:#ffffff;
+                padding:25px;
+                font-size:20px;
+                border-radius:25px;
+                margin-bottom:100px;
+            }
+            h3{
+                text-align:center;
+            }
+        </style>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <nav id="mainnavbar" class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#home"><img src="./Sadržaj/Logo/Albatross_logo.svg" class="Logo" alt="Logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <span class="ms-auto me-4 naslov d-none d-lg-block">Projekt Albatross</span>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Vježbe</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#vjezba1">Vježba 1 - fotografiranje</a></li>
+                                <li><a class="dropdown-item" href="#vjezba2">Vježba 2 - Gimp</a></li>
+                                <li><a class="dropdown-item" href="#vjezba3">Vježba 3 - Audacity</a></li>
+                                <li><a class="dropdown-item" href="#vjezba4">Vježba 4 - Inkspace</a></li>
+                                <li><a class="dropdown-item" href="#vjezba5">Vježba 5 - Blender</a></li>
+                                <li><a class="dropdown-item" href="#vjezba6">Vježba 6 - OBS & DaVinci Resolve</a></li>
+                                <li><a class="dropdown-item" href="#vjezba7">Vježba 7 - Figma</a></li>
+                                <li><a class="dropdown-item" href="#vjezba8">Vježba 8 - Github/Netlify</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">izrada web stranice</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#izrada1">Opis stranice</a></li>
+                                <li><a class="dropdown-item" href="#izrada2">Postupak</a></li>
+                                <li><a class="dropdown-item" href="#izrada3">Sadržaj</a></li>
+                                <li><a class="dropdown-item" href="#izrada4">Izvori & elementi</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="home" id="home"></div>
+        <div class="hero-wrap">
+            <div id="vjezbeCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#vjezbeCarousel" data-bs-slide-to="0" class="active" aria-curre t="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#vjezbeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#vjezbeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#vjezbeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#vjezbeCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#vjezbeCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#vjezbeCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                </div>
+                <div class="carousel-inner rounded-4 shadow-sm overflow-hidden">
+                    <div class="carousel-item active"><img src="./Sadržaj/Izrada-stranice/Snimka zaslona 2026-01-31 111701.png" class="d-block w-100" alt="Izrada 1"></div>
+                    <div class="carousel-item"><img src="./Sadržaj/Izrada-stranice/Snimka zaslona 2026-01-31 111717.png" class="d-block w-100" alt="Izrada 2"></div>
+                    <div class="carousel-item"><img src="./Sadržaj/Izrada-stranice/Snimka zaslona 2026-01-31 111734.png" class="d-block w-100" alt="Izrada 3"></div>
+                    <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Audacity/Snimka zaslona 2026-01-31 095332.png" class="d-block w-100" alt="prikaz vježbe"></div>
+                    <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Figma/figma01.png" class="d-block w-100" alt="prikaz vježbe"></div>
+                    <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Github-netlify/Snimka zaslona 2026-01-27 004958.png" class="d-block w-100" alt="prikaz vježbe"></div>
+                    <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/OBSDaVinci-Resolve/Snimka zaslona 2026-01-31 005001.png" class="d-block w-100" alt="prikaz vježbe"></div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#vjezbeCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#vjezbeCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+            </div>
+        </div>
+        <div id="izrada1" class="Opis">
+            <h1 class="naslov1">Opis projekta</h1>
+            <p>Ovu projektnu web stranicu izradio je student 1. godine prijediplomskog smjera informatike, Alex Mihatović s ciljem prikaza sadržaja i vježbi odrađenih na kolegiju Multimedijalni sustavi. Stranica obuhvaća sve važne teme kolegija kroz strukturirani prikaz, uključujući teorijski sadržaj i praktične vježbe.</p>
+            <p>Naziv "Projekt Albatross" simbolično je odabran jer albatross predstavlja snagu, slobodu i preciznost, osobine važne za rad s multimedijom, gdje je važno povezati tehničko znanje, estetiku i jasnoću prezentacije. Stranica također odražava važnost povezivanja cjeline baš kao što multimedija spaja tekst, sliku, zvuk i interakciju u jedinstveno korisničko iskustvo.</p>
+        </div>
+        <div id="vjezba1" class="vjezbe">
+            <h1 class="naslov1">1. Vježba Fotografiranje</h1>
+            <div class="hero-wrap">
+                <div id="fotografijeCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#fotografijeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#fotografijeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#fotografijeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner rounded-4 shadow-sm overflow-hidden">
+                        <div class="carousel-item active"><img src="./Sadržaj/vjezbe unutar faksa/fotografiranje/slika1.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/fotografiranje/slika2.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/fotografiranje/slika3.png"></div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#fotografijeCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#fotografijeCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                </div>
+            </div>
+            <div>
+                <h1>1. vježba, Fotografiranje</h1>
+                <p>Ova vježba je uključivala osnovne principe fotografiranja koji su uključivali korištenje duge ekspozicije, kratke ekspozicije, fokus dok su objekti u pozadini zamagljeni, fokus dok su objekti u prednjem planu zamagljeni, ručno podešen ISO ili EV i balans bijele boje.</p>
+                <p>U prikazanim fotografijama je većina tih elemenata implementirana, fotografije su fotografirane po noći uz more, što malo onemogučava vidljivost ali svejedno navedeni elementi su vidljivi kroz fotografije.</p>
+                <button class="btn btn-secondary mt-3" data-bs-toggle="collapse" data-bs-target="#opispostupka1">Opis postupka izrade</button>
+                <div id="opispostupka1" class="collapse mt-3">
+                    <h2>Opis izrade fotografija</h2>
+                    <h3>1. korak, namještavanje okruženja</h3>
+                    <p>Za početak je bilo potrebno namjestiti okruženje, što bi podrazumjevalo ulazak u pro mode te namještavanje svih obilježja koja su potrebna za ispunjavanje svih kriterija navedenog zadatka.</p>
+                    <h3>2. korak, podešavanje ISO</h3>
+                    <P>Ručno podešavanje ISO ključno je za rad u pro modu sa fotografiranjem.</P>
+                    <h3>finalni korak, odabir fokusa i ekspozicije</h3>
+                    <p>Ovisno o odabiru i tipu fotografiranja, bitno je odabrati kakve točno uvjete želimo odrediti kako bismo slikali kvalitetnu fotografiju.</p>
+                </div>
+            </div>
+        </div>
+        <div id="vjezba2" class="vjezbe">
+            <h1 class="naslov1">2. Vježba Gimp</h1>
+            <div class="hero-wrap">
+                <div id="gimpCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#gimpCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#gimpCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    </div>
+                    <div class="carousel-inner rounded-4 shadow-sm overflow-hidden">
+                        <div class="carousel-item active"><img src="./Sadržaj/vjezbe unutar faksa/gimp/Snimka zaslona 2026-01-14 000359.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/gimp/Snimka zaslona 2026-01-31 012430.png"></div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#gimpCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#gimpCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                </div>
+            </div>
+            <div>
+                <h1>2. vježba, Gimp</h1>
+                <p>Ova vježba je uključivala osnovne postupke i tehnike obrađivanja i dizajniranja slika pomoću alata dostupnih u Gimp programu. Uvjeti koji su bili potrebni za rješavanje su uključivali najmanje 3 sloja koji su sloj odabrane obuće, sloj teksta i sloj dizajna, tekst dakle logotip, quote, prezime ili nesto drugo, barem jedna maska i barem jedna umetnuta slika, sve objedinjeno u dizajn majice.</p>
+                <p>U prikazanim slikama nalazi se prikaz riješenog zadatka unutar Gimp programa, prvo je prikazan dizajn majice, potom su prikazani slojevi, maska i tekst i naposlijetku je sve to objedinjeno prikazano u jednu sliku.</p>
+                <button class="btn btn-secondary mt-3" data-bs-toggle="collapse" data-bs-target="#opispostupka2">Opis postupka izrade</button>
+                <div id="opispostupka2" class="collapse mt-3">
+                    <h2>Opis postupka izrade gimp datoteke</h2>
+                    <h3>1. korak, namještavanje okruženja</h3>
+                    <p>Važno je kreirati okruženje a to bi značilo postaviti prvi sloj, pozadinu.</p>
+                    <h3>2. korak, namještavanje maske</h3>
+                    <p>Maska je ključan element za uspješno postavljanje elementa unutar gimp datoteke te tako je ključno utjecala na ispunjenje zadatka.</p>
+                    <h3>finalni korak, objedinjavanje elemenata</h3>
+                    <p>nakon postavljanja pozadine i maske stavimo sliku majice koju uredimo pomoču dostupnih gimp uređivača a potom malko uredimo cjelokupni dizajn.</p>
+                </div>
+            </div>
+        </div>
+        <div id="vjezba3" class="vjezbe">
+            <h1 class="naslov1">3. Vježba Audacity</h1>
+            <div class="hero-wrap">
+                <div id="audacityCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#audacityCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#audacityCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#audacityCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner rounded-4 shadow-sm overflow-hidden">
+                        <div class="carousel-item active"><img src="./Sadržaj/vjezbe unutar faksa/Audacity/Snimka zaslona 2026-01-31 100323.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Audacity/Snimka zaslona 2026-01-31 100410.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Audacity/Snimka zaslona 2026-01-31 095332.png"></div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#audacityCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#audacityCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                </div>
+            </div>
+                <h1>Opis 3. Vježbe, Audacity</h1>
+                <p>Ova vježba je uključivala osnovne postupke i tehnike obrađivanja i kreiranja audio datoteke kojom je bilo potrebno implementirati elemente koji su uključivali dodavanje pozadinske glazbe/ambijentalnog zvuka, primjena fade in/out efekata i pozadinski zvuk da je tiši od pričanja (auto duck).</p>
+                <p>U prikazanim slikama prikazani su svi elementi unutar audacity programa te je prikazana primjena istih.</p>
+                <button class="btn btn-secondary mt-3" data-bs-toggle="collapse" data-bs-target="#opispostupka3">Opis postupka izrade</button>
+                <div id="opispostupka3" class="collapse mt-3">
+                    <h2>Opis postupka izrade audacity datoteke</h2>
+                    <h3>1. korak, namještavanje okruženja</h3>
+                    <p>Važno je pokrenuti okruženje i snimiti glavni zvuk kako bismo mogli kreirati bazu za ispunjavanje zadatka.</p>
+                    <h3>2. korak, postavljanje zvuka u pozadini</h3>
+                    <p>Potrebno je staviti u pozadinu zvuk po izboru, ili neki zvuk prirode ili neku pjesmu, za svoj zadatak sam izabrao šum mora.</p>
+                    <h3>finalni korak, uređivanje zvuka pozadine</h3>
+                    <p>Ovim korakom je uređen pozadinski zvuk tako da kada osoba priča onda se zvuk stiša a njihov glas se pojača, te tako je uspješno ostvaren zadatak za Audacity.</p>
+                </div>
+            </div>
+        </div>
+        <div id="vjezba4" class="vjezbe">
+            <h1 class="naslov1">4. Vježba Inkscape</h1>
+            <div class="hero-wrap">
+                <div id="inkspaceCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#inkspaceCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#inkspaceCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#inkspaceCarousel" data-bs-slide-to="2" aria-label="slide 3"></button>
+                        <button type="button" data-bs-target="#inkspaceCarousel" data-bs-slide-to="3" aria-label="slide 4"></button>
+                        <button type="button" data-bs-target="#inkspaceCarousel" data-bs-slide-to="4" aria-label="slide 5"></button>
+                    </div>
+                    <div class="carousel-inner rounded-4 shadow-sm overflow-hidden">
+                        <div class="carousel-item active"><img src="./Sadržaj/vjezbe unutar faksa/Inkspace/Snimka zaslona 2026-01-31 103851.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Inkspace/Snimka zaslona 2026-01-31 104011.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Inkspace/Snimka zaslona 2026-01-31 104026.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Inkspace/Snimka zaslona 2026-01-10 231414.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Inkspace/Snimka zaslona 2026-01-10 231622.png"></div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#inkspaceCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#inkspaceCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" atia-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                </div>
+            </div>
+                <h1>Opis 4. Vježbe, Inkscape</h1>
+                <p>Ova vježba je uključivala osnovne postupke obrade i uređivanja slika i slikovnih sadržaja unutar Inkscape programa. prilikom rada u Inkscape programu važno je bilo implementirati u zadatku elemente koji su uključivali barem 3 sloja i primjenu isječka ili maske.</p>
+                <p>U prikazanim slikama se nalazi priložen primjer riješenog zadatka unutar Inkscape programa koji pokazuje elemente i postupak izrade dizajna sa već opisanim elementima.</p>
+                <p>Nakon prikaza izrađene ikone prikazan je logo od stranice koji je kreiran unutar Inkscape programa</p>
+                <button class="btn btn-secondary mt-3" data-bs-toggle="collapse" data-bs-target="#opispostupka4">Opis postupka izrade</button>
+                <div id="opispostupka4" class="collapse mt-3">
+                    <h2>Opis postupka izrade Inkscape datoteke</h2>
+                    <h3>1. korak, postavljanje okruženja</h3>
+                    <p>Za pokretanje okruženja postavlja se prvi sloj koji je u stvari pozadina, svi ostali elementi se slažu na pozadinski sloj.</p>
+                    <h3>2. korak, korištenje dodatnih slojeva</h3>
+                    <p>Pomoću dodatnih slojeva se implementiraju ikone, logoi i slični tipovi sličica koji se mogu obrađivati s Inkscape programom.</p>
+                    <h3>finalni korak, implementacija maske</h3>
+                    <p>maska se uvodi radi 3D efekta prilikom rada s sličicama.</p>
+                </div>
+            </div>
+        </div>
+        <div id="vjezba5" class="vjezbe">
+            <h1 class="naslov1">5. Vježba Blender</h1>
+            <div class="hero-wrap">
+                <div id="blenderCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#blenderCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#blenderCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#blenderCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#blenderCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#blenderCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    </div>
+                    <div class="carousel-inner rounded-4 shadow-sm overflow-hidden">
+                        <div class="carousel-item active"><img src="./Sadržaj/vjezbe unutar faksa/Blender/Snimka zaslona 2026-01-31 105209.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Blender/Snimka zaslona 2026-01-31 105342.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Blender/Snimka zaslona 2026-01-31 110339.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Blender/Snimka zaslona 2026-01-31 110535.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Blender/Snimka zaslona 2026-01-31 110603.png"></div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#blenderCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#blenderCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                </div>
+            </div>
+                <h1>Opis 5. Vježbe, Blender</h1>
+                <p>Ova vježba je uključivala osnove modeliranja u 3D okruženju, te nakon što smo dobili osnovnu motoriku u navedenom okruženju bio nam je zadan zadatak da kreiramo blender datoteku koja uključuje odabir jednog od 2 zadatka: 1. zadatak je bio kreirati Minecraft blok za koji smo mogli odabrati od referenci te smo morali kreirati detaljniji model nego što je u Minecraftu. 2. zadatak je bio kreirati dioramu od vise Minecraft blokova.</p>
+                <p>Pomoću prikazanih slika vidljivo je kako je prikazan Minecraft blok, prvo su prikazane dimenzije, potom jednostavan Minecraft blok i naposlijetku detaljniji Minecraft blok kao što je traženo u zadatku.</p>
+                <button class="btn btn-secondary mt-3" data-bs-toggle="collapse" data-bs-target="#opispostupka5">Opis postupka izrade</button>
+                <div id="opispostupka5" class="collapse mt-3">
+                    <h2>Opis postupka izrade Blender datoteke</h2>
+                    <h3>1. korak, postavljanje okruženja</h3>
+                    <p>Prilikom početka izrade Blender datoteke potrebno je započeti postupak tako što unesemo oblik kocke, taj oblik če nam biti baza za rad na zadatku.</p>
+                    <h3>2. korak, postavljanje reference</h3>
+                    <p>Nakon što smo postavili oblik uvezemo sliku od tog bloka koji želimo izraditi, za riješenje zadatka ja sam izabrao crafting table referencu dostupnu u opisu zadatka.</p>
+                    <h3>3. korak, postavljanje rubova i stranica</h3>
+                    <p>Postavljanje rubova i stranica je ključno ako želimo izraditi Minecraft blok stoga postavimo za svaku straniu da ide određeni dio referencijske slike.</p>
+                    <h3>finalni korak</h3>
+                    <p>Uljepšavanje oblika bloka te prilagođavanje rubova kako bi se dobilo detaljnije 3D obličje.</p>
+                </div>
+            </div>
+        </div>
+        <div id="vjezba6" class="vjezbe">
+            <h1 class="naslov1">6. Vježba OBS & DaVinci Resolve</h1>
+            <div class="hero-wrap">
+                <div id="obsdavinciCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#obsdavinciCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#obsdavinciCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#obsdavinciCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner rounded-4 shadow-sm overflow-hidden">
+                        <div class="carousel-item active"><img src="./Sadržaj/vjezbe unutar faksa/OBSDaVinci-Resolve/Snimka zaslona 2026-01-31 004115.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/OBSDaVinci-Resolve/Snimka zaslona 2026-01-25 024554.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/OBSDaVinci-Resolve/Snimka zaslona 2026-01-31 005001.png"></div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#obsdavinciCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#obsdavinciCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                </div>
+            </div>
+                <h1>Opis 6. vježbe, OBS & DaVinci Resolve</h1>
+                <p>Ova vježba je uključivala osnove snimanja zaslona te uređivanja snimke i zvuka koji smo morali ubaciti tokom rješavanja zadatka koji je bio namijenjen kao potvrda da smo savladali rad u navedenim programskim aplikacijama.</p>
+                <p>Pomoću prikazanih slika vidljivo je kako sam snimio zaslon te ubacio zvuk u pozadinu koji je prikazan kao audio sadržaj navedenih datoteka.</p>
+                <p>Moja MP4 datoteka koja je priložena kao riješen zadatak: <a href="./OBSDaVinci_str.html" target="_blank">OBS&DaVinci</a></p>
+                <button class="btn btn-secondary mt-3" data-bs-toggle="collapse" data-bs-target="#opispostupka6">Opis postupka izrade</button>
+                <div id="opispostupka6" class="collapse mt-3">
+                    <h2>Opis postupka izrade OBS & DaVinci Resolve datoteka</h2>
+                    <h3>1. korak, namještavanje okruženja</h3>
+                    <p>Unutar prvog koraka važno je postaviti pravilno okruženje što podrazumijeva postavljanje pravilnih postavka za snimanje unutar OBS.</p>
+                    <h3>2. korak, početak snimanja zaslona</h3>
+                    <p>Počinje se snimanje zaslona i automatski važno je da se planirane radnje izvrše koje su za moj primjer zadatka bile da sam dodao finalni dodatak za github/netlify stranicu.</p>
+                    <h3>3. korak, uređivanje snimke</h3>
+                    <p>Nakon završetka snimanja započinje se postupak uređivanja snimke koji je jako kompleksan, trebalo je prvo maknuti sav zvuk, nakon toga je bitno ubaciti elemente preskoka koji bi bili kratki animirani odsječci, uređivanje je izvršeno u mojem riješenju zadatka unutar Openshot programa za uređivanje snimka</p>
+                    <h3>finalni korak</h3>
+                    <p>Postavljanje pozadinskog zvuka je konačni korak, moj pozadinski zvuk preuzet je sa jedne stranice koja se bavi s besplatnim pozadinskim audio zvukovima ili glazbom. Nakon toga finalnog koraka snimka je spremna za predaju.</p>
+                </div>
+            </div>
+        </div>
+        <div id="vjezba7" class="vjezbe">
+            <h1 class="naslov1">7. Vježba Figma</h1>
+            <div class="hero-wrap">
+                <div id="figmaCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#figmaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#figmaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#figmaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner rounded-4 shadow-sm overflow-hidden">
+                        <div class="carousel-item active"><img src="./Sadržaj/vjezbe unutar faksa/Figma/Snimka zaslona 2026-01-31 001649.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Figma/Snimka zaslona 2026-01-31 001756.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Figma/Snimka zaslona 2026-01-31 001838.png"></div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#figmaCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#figmaCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+            </div>
+                <h1>Opis 7. vježbe, Figma</h1>
+                <p>Kroz ovu vježbu smo učili o osnovnom dizajniranju web stranica, web aplikacija i mobilnih aplikacija te je bio zadatak da odaberemo kreirati dizajn za web stranicu ili za mobilnu aplikaciju i bitno je da komponentu i čitljiv sadržaj za odabranu temu.</p>
+                <p>Prikazanim slikama uočljivo je kako sam kreirao mobilnu aplikaciju s jednom komponentom koja je najvažnija, search komponenta, s obzirom da je search funkcija jedna od najkompliciranijih ali i najvažnijih na web aplikacijama smatram da je bilo važno da nju istaknem i stavim kao jednu jedinu komponentu.</p>
+                <p>Moja Figma datoteka priložena kao riješen zadatak: <a href="https://www.figma.com/design/SXWQYOxUW0ZhhGRR0oSZk7/cinestream?node-id=0-1&p=f&t=gexsSYXUKHrg8qvN-0" target="_blank">Cinestream</a></p>
+                <button class="btn btn-secondary mt-3" data-bs-toggle="collapse" data-bs-target="#opispostupka7">Opis postupka izrade</button>
+                <div id="opispostupka7" class="collapse mt-3">
+                    <h2>Opis postupka izrade Figma datoteke</h2>
+                    <h3>1. korak, početak radnje</h3>
+                    <p>Za početak stavljamo sloj za glavni user interface(UI) element</p>
+                    <h3>2. korak, formiranje glavnog UI elementa</h2>
+                    <p>nakon formiranja sloja, uređujemo taj sloj tako da dodamo tekst, logo, button elemente i rasporedimo u skupove elemenata</p>
+                    <h3>3. korak, stvaranje komponente</h3>
+                    <p>Nakon kreiranja početne stranice koja će služiti kao UI, postavimo komponente koje olakšavaju daljnje kreiranje slojeva i stranica ovisno o odabranim funkcijama. Radi simbolike moj odabir je bio da kreiram samo jednu komponentu za search funkciju.</p>
+                    <h3>finalni korak</h3>
+                    <p>Nakon kreiranja preostalih dijelova figma datoteke, odnosno ostalih stranica dobivamo gotovu Figma datoteku spremnu za predaju. Moja Figma datoteka je bazirana na mobilnoj aplikaciji za gledanje filmova, baziranoj na modelu Netflixa, Imdb i disney+ aplikacija.</p>
+                </div>
+            </div>
+        </div>
+        <div id="vjezba8" class="vjezbe">
+            <h1 class="naslov1">8. Vježba Github/Netlify</h1>
+            <div class="hero-wrap">
+                <div id="githubnetlifyCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#githubnetlifyCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#githubnetlifyCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#githubnetlifyCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#githubnetlifyCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    </div>
+                    <div class="carousel-inner rounded-4 shadow-sm overflow-hidden">
+                        <div class="carousel-item active"><img src="./Sadržaj/vjezbe unutar faksa/Github-netlify/Snimka zaslona 2026-01-27 004958.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Github-netlify/Snimka zaslona 2026-01-27 005042.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Github-netlify/Snimka zaslona 2026-01-27 005052.png"></div>
+                        <div class="carousel-item"><img src="./Sadržaj/vjezbe unutar faksa/Github-netlify/Snimka zaslona 2026-01-30 003701.png"></div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#githubnetlifyCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#githubnetlifyCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+                </div>
+            </div>
+                <h1>8. vježba, Github/Netlify</h1>
+                <p>Ova vježba je uključivala osnove HTML-a i CSS-a te smo tokom vježbe morali izraditi jednostavnu web stranicu koju smo morali objaviti pomoću github repositorija te objave stranice pomoću netlify stranice.</p>
+                <p>Prikazanim slikama moguće je vidjeti kako je kreirana moja web stranica za koju sam kreirao dizajn u figmi a potom prilagodio funkcije sa HTML i CSS stiliziranim jezicima i tako sam ju objavio putem netlify stranice na mrežu.</p>
+                <p>Priložena gotova stranica koja je priložena kao riješen zadatak: <a href="https://zivotinjski-katalog.netlify.app/" target="_blank">Životinjski katalog</a></p>
+                <button class="btn btn-secondary mt-3" data-bs-toggle="collapse" data-bs-target="#opispostupka8">Opis postupka izrade</button>
+                <div id="opispostupka8" class="collapse mt-3">
+                    <h2>Koraci izrade Github/Netlify vjezbe</h2>
+                    <h3>1. korak, implementacija HTML i CSS linija</h3>
+                    <p>Na samom početku izrade navedene vježbe izuzetno je bilo važno uključiti HTML i CSS elemente koji su oblikovali strukturu i izgled stranice koja je kreirana za Github/Netlify vježbu.</p>
+                    <h3>2. korak, ubacivanje vanjskih elemenata</h3>
+                    <p>Prilikom izrade stranice ubacio sam vanjske elemente koji su korišteni kako bi stranica izgledala uređenije, interaktivnije i ljepše, sav materijal ubačen je sa stranice <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> koja je istaknuta stranica sa edukativnim sadržajem što se tiče HTML, CSS i JAVA SCRIPT elemenata izrade web stranica.</p>
+                    <h3>3. korak, prilagođavanje sadržaja stranice</h3>
+                    <p>Sav sadržaj web stranice prilagođen je manualno te je kreiran video prikaz mp4 kojim je prikazano finalno uređivanje na ovoj web stranici, dalje važno za istaknuti je kako sve prikazane slike osim slike od loga stranice su ubačene putem interneta sa više raznih stranica. Ikona od loga je manualno kreirana unutar gimpa i implementirana kao png slika.</p>
+                    <h3>Finalni korak, objava web stranice</h3>
+                    <p>Web stranica prvo je bila objavljena u zaseban github repozitorij pomoću software aplikacije github desktop, sa github desktop aplikacije poslan je repozitorij na github.com te tamo je postavljena veza sa netlify web stranicom koja pruža uslugu web hostinga i tako je objavljena stranica, objavom repozitorija u netlify i daljnjim plasiranjem html datoteke kao stranice sa sadržajem koji se nalazi unutar repozitorija.</p>
+                </div>
+            </div>
+        </div>
+        <div id="izrada2" class="postupak">
+            <h1 class="naslov1">Postupak izrade web stranice</h1>
+            <p>Postupak izrade je trajao relativno dugo s obzirom da sam morao kreirati sav sadržaj ručno te sam ga morao urediti kako bi mogao poslužiti za sadržaj ove projektne web stranice. sav sadržaj koji se nalazi na ovoj stranici sam pisao većinom ručno bez copy pasta, osim kompleksnijih elemenata kao što su carousel slideri, dropdown funkcije i JavScript kodovi koji su preuzeti sa bootstrap stranice, za njih sam provjerio par tutorijala i objašnjenja na forumima a potom sam prilagodio kako bi ispalo kako spada.</p>
+            <p>Postupak izrade sam započeo sa osnovnom idejom koja je bila da se prikaže sav sadržaj od kolegija u web stranici, no pošto bi to zauzelo previše vremena ali i interaktivnost sa korisnicima koji bi potencijalno gledali ovu stranicu bi u tome slučaju bila svedena na minimum odlučio sam se prikazati samo najvažnije za izradu sadržaja i kreiranje dizajna web stranice.</p>
+            <p>HTML i CSS su odmah bili primjenjeni te sam započeo s izradom fiksiranog navbara koji je gore na vrhu stranice, sad implementacijom JavaScript kreirao sam jednostavnu navigaciju koja olakšava odlazak do određene razine stranice koju korisnik želi vidjeti.</p>
+            <p>Kreiranjem jedne stranice postigao sam učinak da korisnik ne mora ići na više podstranice da bi pristupio određenom sadržaju već može direktno pristupiti sadržaju samo da malo scroll-a.</p>
+            <p>Za dizajn web stranice korištena je bila ideja iz figme kojom sam već ranije kreirao stranicu za vježbu a potom smo i na predavanju broj 10. radili osnovne pojmove o dizajnu što je znatno utjecalo za dizajn ove web stranice jer je glavno obilježje dobre web stranice interaktivnost sa korisnikom ka ćemu se težilo sa svim implementiranim funkcijama koje olakšavaju korisniku kretanje po stranici.</p>
+        </div>
+        <div id="izrada3" class="sadrzaj">
+            <h1 class="naslov1">Sadržaj korišten tokom izrade web stranice</h1>
+            <p>Sadržaj korišten tokom izrade web stranice dijeli se na same elemente web stranice i na elemente vježbi koje se sastoje od samog opisa rješavanja zadatka za određenu vježbu ali i sa slikama koje prikazuju navedeni sadržaj.</p>
+            <p>Elementi web stranice kao što je objašnjeno u dijelu postupka kreiranja web stranice korišteni su da ostvare interaktivnost sa korisnikom. Važna stavka je bila teorijski dio predavanja koji mi je puno pomogao s objašnjenjima pri izradi zadataka ali i same web stranice.</p>
+            <p>Ističući sve elemente unutar stranice, važna stavka je i sam dojam korisnika jer sav ovaj sadržaj ima vrijednost samo ako ga korisnik smatra zanimljivim. Stoga subjektivnost je važna stoga su i funkcije postavljene da korisnik bira što i kako želi pročitati ili pogledati.</p>
+        </div>
+        <div id="izrada4" class="izvorielementi">
+            <h1 class="naslov1">Izvori & elementi web stranice</h1>
+            <p>Kroz web stranicu korišteni su elementi i sadržaj koji potjeće sa stranice <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> konfiguracija i prilagodba elemenata je bila ručna stoga to je jedina stranica sa sadržajem koju je važno za naglasiti a za bugove koji su nastali prilikom izrade web stranice, ručno sam ih otklanjao i popravljao s obzirom da je to dodatna vježba koja pomaže sa poboljšavanjem razumijevanja HTML, CSS i web izrađivačkih vještina, koje su za mene početnićke ali sa vremenom možda dođem do naprednije razine.</p>
+        </div>
+    </body>
+</html>
